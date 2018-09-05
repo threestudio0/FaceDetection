@@ -1,0 +1,38 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/common.h
+cstdint
+-
+omp.h
+-
+
+../include/face_detection.h
+cstdint
+-
+vector
+-
+common.h
+../include/common.h
+
+/home/liangfeng/Seeta/SeetaFace/FaceDetection/src/test/facedetection_test.cpp
+cstdint
+-
+fstream
+-
+iostream
+-
+string
+-
+opencv2/highgui/highgui.hpp
+/home/liangfeng/Seeta/SeetaFace/FaceDetection/src/test/opencv2/highgui/highgui.hpp
+opencv2/imgproc/imgproc.hpp
+/home/liangfeng/Seeta/SeetaFace/FaceDetection/src/test/opencv2/imgproc/imgproc.hpp
+face_detection.h
+/home/liangfeng/Seeta/SeetaFace/FaceDetection/src/test/face_detection.h
+

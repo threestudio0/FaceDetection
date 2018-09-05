@@ -99,6 +99,7 @@ int main(int argc, char** argv) {
     	face_rect.y = faces[i].bbox.y;
     	face_rect.width = faces[i].bbox.width;
     	face_rect.height = faces[i].bbox.height;
+    	std::cout<<"face_rect.x: "<<face_rect.x<<" face_rect.y "<<face_rect.y << " face_rect.width " << face_rect.width << " face_rect.height " << face_rect.height << std::endl;
     	cv::rectangle(frame, face_rect, CV_RGB(0, 0, 255), 4, 8, 0);
 	}    
     cv::imshow(DISP_WINNANE, frame);

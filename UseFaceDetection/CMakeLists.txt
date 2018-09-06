@@ -34,7 +34,8 @@ endif()
 
 
 
-set(facedet_required_libs /home/liangfeng/cv/UseFaceDetection/lib/libseeta_facedet_lib.so)
+set(facedet_required_libs ${CMAKE_CURRENT_SOURCE_DIR}/lib/libseeta_facedet_lib.so)
+message(STATUS ${facedet_required_libs})
 
 find_package(OpenCV)
     if (NOT OpenCV_FOUND)

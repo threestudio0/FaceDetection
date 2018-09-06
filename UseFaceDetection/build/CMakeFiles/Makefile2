@@ -59,45 +59,82 @@ RM = /usr/local/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/liangfeng/cv/UseFaceDetection
+CMAKE_SOURCE_DIR = /home/liangfeng/Seeta/SeetaFace/FaceDetecation_github/UseFaceDetection
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/liangfeng/cv/UseFaceDetection/build
+CMAKE_BINARY_DIR = /home/liangfeng/Seeta/SeetaFace/FaceDetecation_github/UseFaceDetection/build
 
 #=============================================================================
-# Target rules for target CMakeFiles/UseFaceDetection.dir
+# Target rules for target CMakeFiles/facedetection_test.dir
 
 # All Build rule for target.
-CMakeFiles/UseFaceDetection.dir/all:
-	$(MAKE) -f CMakeFiles/UseFaceDetection.dir/build.make CMakeFiles/UseFaceDetection.dir/depend
-	$(MAKE) -f CMakeFiles/UseFaceDetection.dir/build.make CMakeFiles/UseFaceDetection.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/liangfeng/cv/UseFaceDetection/build/CMakeFiles --progress-num=1,2 "Built target UseFaceDetection"
-.PHONY : CMakeFiles/UseFaceDetection.dir/all
+CMakeFiles/facedetection_test.dir/all:
+	$(MAKE) -f CMakeFiles/facedetection_test.dir/build.make CMakeFiles/facedetection_test.dir/depend
+	$(MAKE) -f CMakeFiles/facedetection_test.dir/build.make CMakeFiles/facedetection_test.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/liangfeng/Seeta/SeetaFace/FaceDetecation_github/UseFaceDetection/build/CMakeFiles --progress-num=3,4 "Built target facedetection_test"
+.PHONY : CMakeFiles/facedetection_test.dir/all
 
 # Include target in all.
-all: CMakeFiles/UseFaceDetection.dir/all
+all: CMakeFiles/facedetection_test.dir/all
 
 .PHONY : all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/UseFaceDetection.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/liangfeng/cv/UseFaceDetection/build/CMakeFiles 2
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/UseFaceDetection.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/liangfeng/cv/UseFaceDetection/build/CMakeFiles 0
-.PHONY : CMakeFiles/UseFaceDetection.dir/rule
+CMakeFiles/facedetection_test.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/liangfeng/Seeta/SeetaFace/FaceDetecation_github/UseFaceDetection/build/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/facedetection_test.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/liangfeng/Seeta/SeetaFace/FaceDetecation_github/UseFaceDetection/build/CMakeFiles 0
+.PHONY : CMakeFiles/facedetection_test.dir/rule
 
 # Convenience name for target.
-UseFaceDetection: CMakeFiles/UseFaceDetection.dir/rule
+facedetection_test: CMakeFiles/facedetection_test.dir/rule
 
-.PHONY : UseFaceDetection
-
-# clean rule for target.
-CMakeFiles/UseFaceDetection.dir/clean:
-	$(MAKE) -f CMakeFiles/UseFaceDetection.dir/build.make CMakeFiles/UseFaceDetection.dir/clean
-.PHONY : CMakeFiles/UseFaceDetection.dir/clean
+.PHONY : facedetection_test
 
 # clean rule for target.
-clean: CMakeFiles/UseFaceDetection.dir/clean
+CMakeFiles/facedetection_test.dir/clean:
+	$(MAKE) -f CMakeFiles/facedetection_test.dir/build.make CMakeFiles/facedetection_test.dir/clean
+.PHONY : CMakeFiles/facedetection_test.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/facedetection_test.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/facedetection_camera.dir
+
+# All Build rule for target.
+CMakeFiles/facedetection_camera.dir/all:
+	$(MAKE) -f CMakeFiles/facedetection_camera.dir/build.make CMakeFiles/facedetection_camera.dir/depend
+	$(MAKE) -f CMakeFiles/facedetection_camera.dir/build.make CMakeFiles/facedetection_camera.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/liangfeng/Seeta/SeetaFace/FaceDetecation_github/UseFaceDetection/build/CMakeFiles --progress-num=1,2 "Built target facedetection_camera"
+.PHONY : CMakeFiles/facedetection_camera.dir/all
+
+# Include target in all.
+all: CMakeFiles/facedetection_camera.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/facedetection_camera.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/liangfeng/Seeta/SeetaFace/FaceDetecation_github/UseFaceDetection/build/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/facedetection_camera.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/liangfeng/Seeta/SeetaFace/FaceDetecation_github/UseFaceDetection/build/CMakeFiles 0
+.PHONY : CMakeFiles/facedetection_camera.dir/rule
+
+# Convenience name for target.
+facedetection_camera: CMakeFiles/facedetection_camera.dir/rule
+
+.PHONY : facedetection_camera
+
+# clean rule for target.
+CMakeFiles/facedetection_camera.dir/clean:
+	$(MAKE) -f CMakeFiles/facedetection_camera.dir/build.make CMakeFiles/facedetection_camera.dir/clean
+.PHONY : CMakeFiles/facedetection_camera.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/facedetection_camera.dir/clean
 
 .PHONY : clean
 

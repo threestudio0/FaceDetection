@@ -1,4 +1,4 @@
-# Install script for directory: /home/liangfeng/cv/UseFaceDetection
+# Install script for directory: /home/liangfeng/Seeta/SeetaFace/FaceDetecation_github/UseFaceDetection
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/liangfeng/cv/UseFaceDetection/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/liangfeng/Seeta/SeetaFace/FaceDetecation_github/UseFaceDetection/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

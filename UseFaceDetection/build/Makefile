@@ -48,24 +48,13 @@ RM = /usr/local/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/liangfeng/cv/UseFaceDetection
+CMAKE_SOURCE_DIR = /home/liangfeng/Seeta/SeetaFace/FaceDetecation_github/UseFaceDetection
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/liangfeng/cv/UseFaceDetection/build
+CMAKE_BINARY_DIR = /home/liangfeng/Seeta/SeetaFace/FaceDetecation_github/UseFaceDetection/build
 
 #=============================================================================
 # Targets provided globally by CMake.
-
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/local/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
 
 # Special rule for the target edit_cache
 edit_cache:
@@ -78,11 +67,22 @@ edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
 
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/local/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
+
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/liangfeng/cv/UseFaceDetection/build/CMakeFiles /home/liangfeng/cv/UseFaceDetection/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/liangfeng/Seeta/SeetaFace/FaceDetecation_github/UseFaceDetection/build/CMakeFiles /home/liangfeng/Seeta/SeetaFace/FaceDetecation_github/UseFaceDetection/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/liangfeng/cv/UseFaceDetection/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/liangfeng/Seeta/SeetaFace/FaceDetecation_github/UseFaceDetection/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -111,17 +111,30 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named UseFaceDetection
+# Target rules for targets named facedetection_test
 
 # Build rule for target.
-UseFaceDetection: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 UseFaceDetection
-.PHONY : UseFaceDetection
+facedetection_test: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 facedetection_test
+.PHONY : facedetection_test
 
 # fast build rule for target.
-UseFaceDetection/fast:
-	$(MAKE) -f CMakeFiles/UseFaceDetection.dir/build.make CMakeFiles/UseFaceDetection.dir/build
-.PHONY : UseFaceDetection/fast
+facedetection_test/fast:
+	$(MAKE) -f CMakeFiles/facedetection_test.dir/build.make CMakeFiles/facedetection_test.dir/build
+.PHONY : facedetection_test/fast
+
+#=============================================================================
+# Target rules for targets named facedetection_camera
+
+# Build rule for target.
+facedetection_camera: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 facedetection_camera
+.PHONY : facedetection_camera
+
+# fast build rule for target.
+facedetection_camera/fast:
+	$(MAKE) -f CMakeFiles/facedetection_camera.dir/build.make CMakeFiles/facedetection_camera.dir/build
+.PHONY : facedetection_camera/fast
 
 facedetection_camera.o: facedetection_camera.cpp.o
 
@@ -129,7 +142,7 @@ facedetection_camera.o: facedetection_camera.cpp.o
 
 # target to build an object file
 facedetection_camera.cpp.o:
-	$(MAKE) -f CMakeFiles/UseFaceDetection.dir/build.make CMakeFiles/UseFaceDetection.dir/facedetection_camera.cpp.o
+	$(MAKE) -f CMakeFiles/facedetection_camera.dir/build.make CMakeFiles/facedetection_camera.dir/facedetection_camera.cpp.o
 .PHONY : facedetection_camera.cpp.o
 
 facedetection_camera.i: facedetection_camera.cpp.i
@@ -138,7 +151,7 @@ facedetection_camera.i: facedetection_camera.cpp.i
 
 # target to preprocess a source file
 facedetection_camera.cpp.i:
-	$(MAKE) -f CMakeFiles/UseFaceDetection.dir/build.make CMakeFiles/UseFaceDetection.dir/facedetection_camera.cpp.i
+	$(MAKE) -f CMakeFiles/facedetection_camera.dir/build.make CMakeFiles/facedetection_camera.dir/facedetection_camera.cpp.i
 .PHONY : facedetection_camera.cpp.i
 
 facedetection_camera.s: facedetection_camera.cpp.s
@@ -147,8 +160,35 @@ facedetection_camera.s: facedetection_camera.cpp.s
 
 # target to generate assembly for a file
 facedetection_camera.cpp.s:
-	$(MAKE) -f CMakeFiles/UseFaceDetection.dir/build.make CMakeFiles/UseFaceDetection.dir/facedetection_camera.cpp.s
+	$(MAKE) -f CMakeFiles/facedetection_camera.dir/build.make CMakeFiles/facedetection_camera.dir/facedetection_camera.cpp.s
 .PHONY : facedetection_camera.cpp.s
+
+facedetection_test.o: facedetection_test.cpp.o
+
+.PHONY : facedetection_test.o
+
+# target to build an object file
+facedetection_test.cpp.o:
+	$(MAKE) -f CMakeFiles/facedetection_test.dir/build.make CMakeFiles/facedetection_test.dir/facedetection_test.cpp.o
+.PHONY : facedetection_test.cpp.o
+
+facedetection_test.i: facedetection_test.cpp.i
+
+.PHONY : facedetection_test.i
+
+# target to preprocess a source file
+facedetection_test.cpp.i:
+	$(MAKE) -f CMakeFiles/facedetection_test.dir/build.make CMakeFiles/facedetection_test.dir/facedetection_test.cpp.i
+.PHONY : facedetection_test.cpp.i
+
+facedetection_test.s: facedetection_test.cpp.s
+
+.PHONY : facedetection_test.s
+
+# target to generate assembly for a file
+facedetection_test.cpp.s:
+	$(MAKE) -f CMakeFiles/facedetection_test.dir/build.make CMakeFiles/facedetection_test.dir/facedetection_test.cpp.s
+.PHONY : facedetection_test.cpp.s
 
 # Help Target
 help:
@@ -156,12 +196,16 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... UseFaceDetection"
+	@echo "... facedetection_test"
+	@echo "... rebuild_cache"
+	@echo "... facedetection_camera"
 	@echo "... facedetection_camera.o"
 	@echo "... facedetection_camera.i"
 	@echo "... facedetection_camera.s"
+	@echo "... facedetection_test.o"
+	@echo "... facedetection_test.i"
+	@echo "... facedetection_test.s"
 .PHONY : help
 
 

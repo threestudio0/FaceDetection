@@ -37,7 +37,7 @@
 #include "opencv2/highgui/highgui.hpp"
 #include "opencv2/imgproc/imgproc.hpp"
 
-#include "face_detection.h"
+#include "include/face_detection.h"
 
 using namespace std;
 
@@ -60,7 +60,8 @@ int main(int argc, char** argv) {
 
 
   std::vector<seeta::FaceInfo> faces;
-  seeta::FaceDetection detector("model/seeta_fd_frontal_v1.0.bin");
+  seeta::FaceDetection detector("../model/seeta_fd_frontal_v1.0.bin");
+  //seeta::FaceDetection detector(argv[1]);
   detector.SetMinFaceSize(40);
   detector.SetScoreThresh(2.f);
   detector.SetImagePyramidScaleFactor(0.8f);

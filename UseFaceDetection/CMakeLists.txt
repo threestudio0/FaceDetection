@@ -44,8 +44,12 @@ find_package(OpenCV)
         include_directories(${OpenCV_INCLUDE_DIRS})
         list(APPEND facedet_required_libs ${OpenCV_LIBS})
 
-	ADD_EXECUTABLE(UseFaceDetection facedetection_camera.cpp)
-	INCLUDE_DIRECTORIES(/home/liangfeng/cv/UseFaceDetection/include)
-	#TARGET_LINK_LIBRARIES(UseFaceDetection /home/liangfeng/cv/UseFaceDetection/lib/libseeta_facedet_lib.so )
-        target_link_libraries(UseFaceDetection ${facedet_required_libs})
+	ADD_EXECUTABLE(facedetection_camera facedetection_camera.cpp)
+	INCLUDE_DIRECTORIES(${CMAKE_INCLUDE_CURRENT_DIR}./include)
+        target_link_libraries(facedetection_camera ${facedet_required_libs})
+
+	ADD_EXECUTABLE(facedetection_test facedetection_test.cpp)
+	INCLUDE_DIRECTORIES(${CMAKE_INCLUDE_CURRENT_DIR}./include)
+        target_link_libraries(facedetection_test ${facedet_required_libs})
+
     endif()

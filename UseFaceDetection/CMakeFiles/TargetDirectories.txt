@@ -1,0 +1,5 @@
+/home/liangfeng/Seeta/SeetaFace/FaceDetecation_github/UseFaceDetection/CMakeFiles/rebuild_cache.dir
+/home/liangfeng/Seeta/SeetaFace/FaceDetecation_github/UseFaceDetection/CMakeFiles/seeta_facedet_lib.dir
+/home/liangfeng/Seeta/SeetaFace/FaceDetecation_github/UseFaceDetection/CMakeFiles/facedet_test.dir
+/home/liangfeng/Seeta/SeetaFace/FaceDetecation_github/UseFaceDetection/CMakeFiles/edit_cache.dir
+/home/liangfeng/Seeta/SeetaFace/FaceDetecation_github/UseFaceDetection/CMakeFiles/facedet_camera.dir

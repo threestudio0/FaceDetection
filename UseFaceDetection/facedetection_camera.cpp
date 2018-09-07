@@ -33,6 +33,7 @@
 #include <fstream>
 #include <iostream>
 #include <string>
+#include <unistd.h>
 
 #include "opencv2/highgui/highgui.hpp"
 #include "opencv2/imgproc/imgproc.hpp"
@@ -47,6 +48,7 @@ using namespace std;
 
 int main(int argc, char** argv) {
   
+  const char* img_path = argv[1];
   cv::VideoCapture camera(CAMID);
   if (!camera.isOpened()) {
     std::cerr << "failed to open camera" << std::endl;
@@ -57,7 +59,10 @@ int main(int argc, char** argv) {
 
   cv::Mat frame;
   cv::Mat img_gray;
+  cv::Mat local_img;
 
+
+  local_img = cv::imread(img_path, cv::IMREAD_UNCHANGED);
 
   std::vector<seeta::FaceInfo> faces;
   seeta::FaceDetection detector("../model/seeta_fd_frontal_v1.0.bin");
@@ -76,23 +81,42 @@ int main(int argc, char** argv) {
 		break;
 	}
 
+
+
+	#if 0
+	
+	//ftick = cv::getCPUTickCount();	
+	if (local_img.channels() != 1)
+		cv::cvtColor(local_img, img_gray, cv::COLOR_BGR2GRAY);
+
+	else
+		img_gray = local_img;
+			
+	#else
 	//ftick = cv::getCPUTickCount();	
 	if (frame.channels() != 1)
 		cv::cvtColor(frame, img_gray, cv::COLOR_BGR2GRAY);
 
 	else
 		img_gray = frame;
+		
+	#endif
 	
 	seeta::ImageData img_data;
   	img_data.data = img_gray.data;
   	img_data.width = img_gray.cols;
   	img_data.height = img_gray.rows;
   	img_data.num_channels = 1;
-	//std::cout<<"img_data.width: "<<img_data.width<<" img_data.height "<<img_data.height << std::endl;
+
+
+	long t0 = cv::getTickCount();
 	faces = detector.Detect(img_data);
-	//etick = cv::getCPUTickCount();
+	long t1 = cv::getTickCount();
+	double secs = (t1 - t0)/cv::getTickFrequency();
+	cout << "Detections takes " << secs << " seconds " << endl;
 
 	cv::Rect face_rect;
+	cv::Point face_center_point;
     int32_t num_face = static_cast<int32_t>(faces.size());
     
 	for (int32_t i = 0; i < num_face; i++) {
@@ -100,9 +124,13 @@ int main(int argc, char** argv) {
     	face_rect.y = faces[i].bbox.y;
     	face_rect.width = faces[i].bbox.width;
     	face_rect.height = faces[i].bbox.height;
+    	face_center_point.x = face_rect.x + face_rect.width/2;
+    	face_center_point.y = face_rect.y + face_rect.height/2;
     	std::cout<<"face_rect.x: "<<face_rect.x<<" face_rect.y "<<face_rect.y << " face_rect.width " << face_rect.width << " face_rect.height " << face_rect.height << std::endl;
-    	cv::rectangle(frame, face_rect, CV_RGB(0, 0, 255), 4, 8, 0);
-	}    
+    	std::cout<<"face_center_point.x: "<<face_center_point.x<<" face_center_point.y "<<face_center_point.y  << std::endl;
+    	cv::rectangle(frame, face_rect, CV_RGB(250, 230, 215), 4, 8, 0);
+	} 
+	//sleep(1);   
     cv::imshow(DISP_WINNANE, frame);
     faces.clear();
     
